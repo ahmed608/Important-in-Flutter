@@ -147,6 +147,52 @@ void main() {
 **Solution:**
 - Add required permissions in `AndroidManifest.xml` (for Android) and `Info.plist` (for iOS).
 
+## Common Signing Issues & Solutions
+
+### Issue: Keystore Not Found
+**Solution:** Ensure that the `keystore.jks` file exists and the path is correct in `key.properties`.
+
+### Issue: Incorrect Keystore Password
+**Solution:** Double-check the `storePassword` and `keyPassword` in `key.properties` and ensure they match the actual keystore.
+
+### Issue: Missing Signing Config in `build.gradle`
+**Solution:**
+```gradle
+android {
+    signingConfigs {
+        release {
+            storeFile file("../keystore.jks")
+            storePassword "your_password"
+            keyAlias "your_key_alias"
+            keyPassword "your_key_password"
+        }
+    }
+}
+```
+
+### Issue: Invalid Key Alias
+**Solution:** Run the following command to list key aliases in your keystore:
+```sh
+keytool -list -v -keystore your_keystore.jks
+```
+
+### Issue: `SHA1` or `SHA256` Mismatch
+**Solution:** Get the correct fingerprint using:
+```sh
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+```
+
+### Issue: Play Store Rejecting APK Due to Signing
+**Solution:** Ensure your app is signed with the correct `upload key` and matches the Play Console key.
+
+### Issue: `jarsigner` Verification Failed
+**Solution:** Run the following command to verify the signature:
+```sh
+jarsigner -verify -verbose -certs your_app.apk
+```
+
+
+
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
