@@ -21,7 +21,14 @@ flutter analyze          # Analyzes the project for potential issues
 flutter format .         # Formats all Dart files in the project
 flutter test             # Runs tests in the project
 ```
-
+### Gradle Issues Commands
+```sh
+cd android && ./gradlew clean        # Cleans the Gradle build cache
+cd android && ./gradlew build         # Builds the Android project
+cd android && ./gradlew dependencies  # Lists dependencies and resolves conflicts
+cd android && ./gradlew --stop        # Stops all Gradle daemons
+cd android && ./gradlew --refresh-dependencies  # Forces dependency refresh
+```
 ### Dart Commands
 ```sh
 dart --version         # Checks Dart version
