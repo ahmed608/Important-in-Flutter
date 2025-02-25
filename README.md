@@ -10,6 +10,7 @@ Flutter is a powerful framework for building cross-platform applications. This g
 ### 📝 **General Commands**
 ```sh
 flutter doctor           # Checks Flutter installation and dependencies
+flutter doctor --android-licenses # Command: Accept Android Licenses
 flutter create my_app    # Creates a new Flutter project
 flutter run              # Runs the app on a connected device or emulator
 flutter build apk        # Builds an APK for Android
@@ -20,6 +21,7 @@ flutter pub upgrade      # Updates dependencies to the latest versions
 flutter analyze          # Analyzes the project for potential issues
 flutter format .         # Formats all Dart files in the project
 flutter test             # Runs tests in the project
+
 ```
 
 ### 🔠 **Dart Commands**
