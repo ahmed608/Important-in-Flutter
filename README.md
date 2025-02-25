@@ -427,7 +427,7 @@ Alternatively, zip the `build/windows/runner/Release/` folder and share it direc
 
 ---
 
-## ✅ **4. Best Practices in Flutter Development**
+## ✅ **Best Practices in Flutter Development**
 - Use **const** for widgets that don’t change to improve performance.
 - Organize code into **separate files** for readability.
 - Optimize app size by using **WebP images** instead of PNGs.
