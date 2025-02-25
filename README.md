@@ -21,6 +21,14 @@ flutter analyze          # Analyzes the project for potential issues
 flutter format .         # Formats all Dart files in the project
 flutter test             # Runs tests in the project
 ```
+
+### Dart Commands
+```sh
+dart --version         # Checks Dart version
+dart run file.dart     # Runs a specific Dart file
+dart analyze          # Analyzes Dart code for errors and warnings
+```
+
 ### Gradle Issues Commands
 ```sh
 cd android && ./gradlew clean        # Cleans the Gradle build cache
@@ -31,12 +39,36 @@ cd android && ./gradlew --refresh-dependencies  # Forces dependency refresh
 cd android && ./gradlew clean assembleDebug  # This compiles the app in debug mode
 
 ```
-### Dart Commands
+### Basic Git Commands
 ```sh
-dart --version         # Checks Dart version
-dart run file.dart     # Runs a specific Dart file
-dart analyze          # Analyzes Dart code for errors and warnings
+git init – Initializes a new Git repository in the current directory.
+git clone <repo_url> – Clones an existing Git repository from a remote source.
+git status – Shows the current status of your working directory (changes, staged files, etc.).
+git add <file> – Adds a specific file to the staging area.
+git add . – Adds all changes in the current directory to the staging area.
+git commit -m "message" – Commits the staged changes with a descriptive message.
+git push origin <branch> – Pushes committed changes to the remote repository.
+git pull origin <branch> – Fetches and merges changes from the remote repository.
+git branch – Lists all branches in the repository.
+git checkout <branch> – Switches to a different branch.
+git checkout -b <new_branch> – Creates and switches to a new branch.
+git merge <branch> – Merges the specified branch into the current branch.
+git log – Displays the commit history.
+git diff – Shows differences between changes in working directory and last commit.
+git reset --hard <commit> – Resets the repository to a specific commit (removes all changes).
+git stash – Temporarily saves changes without committing.
+git stash pop – Restores saved changes from stash.
+git rebase <branch> – Reapplies commits from the current branch on top of another branch.
+git tag <tag_name> – Creates a tag for a specific commit (useful for releases).
+git remote -v – Lists remote repositories linked to your project.
+git fetch – Fetches changes from the remote without merging them.
+git show <commit> – Displays details about a specific commit.
+git rm <file> – Removes a file from the repository.
+git revert <commit> – Creates a new commit that undoes the changes of a specific commit.
+git cherry-pick <commit> – Applies a specific commit from another branch.
+
 ```
+
 
 ---
 
