@@ -28,6 +28,8 @@ cd android && ./gradlew build         # Builds the Android project
 cd android && ./gradlew dependencies  # Lists dependencies and resolves conflicts
 cd android && ./gradlew --stop        # Stops all Gradle daemons
 cd android && ./gradlew --refresh-dependencies  # Forces dependency refresh
+cd android && ./gradlew clean assembleDebug  # This compiles the app in debug mode
+
 ```
 ### Dart Commands
 ```sh
