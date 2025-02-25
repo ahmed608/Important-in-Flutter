@@ -20,6 +20,7 @@ flutter pub upgrade      # Updates dependencies to the latest versions
 flutter analyze          # Analyzes the project for potential issues
 flutter format .         # Formats all Dart files in the project
 flutter test             # Runs tests in the project
+flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
 ```
 
 ### Dart Commands
@@ -27,6 +28,20 @@ flutter test             # Runs tests in the project
 dart --version         # Checks Dart version
 dart run file.dart     # Runs a specific Dart file
 dart analyze          # Analyzes Dart code for errors and warnings
+```
+
+### Build APK for Different Architectures
+```sh
+flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+```
+```sh
+Explanation:
+
+This command builds separate APKs for different architectures (arm, arm64, x64).
+
+--split-per-abi ensures each APK is optimized for a specific CPU architecture, reducing APK size.
+
+It is useful when deploying to Play Store, as users download only the compatible APK for their device.
 ```
 
 ### Gradle Issues Commands
