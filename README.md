@@ -226,6 +226,85 @@ jarsigner -verify -verbose -certs your_app.apk
 <string>We need your location</string>
 ```
 
+# How to Change Package Name in Flutter
+
+Changing the package name in a Flutter project can be done easily using the `change_app_package_name` package. Follow the steps below to rename your Flutter package.
+
+## **Method 1: Using `change_app_package_name`**
+This is the easiest way to change the package name in Flutter.
+
+### **Step 1: Add Dependency**
+Run the following command in the terminal:
+```sh
+flutter pub add change_app_package_name
+```
+
+### **Step 2: Change Package Name**
+Run the command below, replacing `com.new.package.name` with your desired package name:
+```sh
+flutter pub run change_app_package_name:main com.new.package.name
+```
+
+This will automatically update the necessary files with the new package name.
+
+### **Step 3: Verify Changes**
+After running the command, check that the following files have been updated:
+- `android/app/src/main/AndroidManifest.xml`
+- `android/app/build.gradle`
+- `android/app/src/main/kotlin/com/new/package/name/MainActivity.kt` (if using Kotlin)
+- `android/app/src/main/java/com/new/package/name/MainActivity.java` (if using Java)
+- `ios/Runner.xcodeproj/project.pbxproj`
+- `ios/Runner/Info.plist`
+
+### **Step 4: Clean and Rebuild Project**
+Run the following commands to apply the changes:
+```sh
+flutter clean
+flutter pub get
+flutter run
+```
+
+## **Method 2: Manual Package Name Change**
+If you prefer to manually update the package name, follow these steps:
+
+### **Step 1: Update Android Package Name**
+1. Open `android/app/src/main/AndroidManifest.xml` and change the `package` attribute:
+   ```xml
+   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+       package="com.new.package.name">
+   ```
+2. Update `android/app/build.gradle`:
+   ```gradle
+   android {
+       defaultConfig {
+           applicationId "com.new.package.name"
+       }
+   }
+   ```
+3. Rename the folder structure inside `android/app/src/main/kotlin/` (or `java/`) to match the new package name.
+
+### **Step 2: Update iOS Bundle Identifier**
+1. Open `ios/Runner.xcodeproj` in Xcode.
+2. Go to `Runner` > `General` > `Identity` and change the `Bundle Identifier`.
+3. Update `ios/Runner/Info.plist`:
+   ```xml
+   <key>CFBundleIdentifier</key>
+   <string>com.new.package.name</string>
+   ```
+
+### **Step 3: Clean and Rebuild Project**
+After making these changes, run:
+```sh
+flutter clean
+flutter pub get
+flutter run
+```
+
+By following these steps, you can successfully change the package name in your Flutter project.
+
+
+
+
 ---
 
 ## 4. Best Practices in Flutter Development
