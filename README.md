@@ -20,7 +20,6 @@ flutter pub upgrade      # Updates dependencies to the latest versions
 flutter analyze          # Analyzes the project for potential issues
 flutter format .         # Formats all Dart files in the project
 flutter test             # Runs tests in the project
-flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
 ```
 
 ### Dart Commands
@@ -84,6 +83,13 @@ git cherry-pick <commit> # Applies a specific commit from another branch.
 
 ```
 
+### Basic Windows Platform Commands
+```sh
+flutter pub global activate msix
+flutter build windows --release
+dart pub global run msix:create
+
+```
 
 ---
 
