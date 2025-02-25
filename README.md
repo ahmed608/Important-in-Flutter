@@ -27,6 +27,7 @@ flutter test             # Runs tests in the project
 dart --version         # Checks Dart version
 dart run file.dart     # Runs a specific Dart file
 dart analyze          # Analyzes Dart code for errors and warnings
+dart fix --apply      # remove unused imports and clean code
 ```
 
 ### Build APK for Different Architectures
